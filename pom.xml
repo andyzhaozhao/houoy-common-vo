@@ -6,7 +6,7 @@
 
     <groupId>com.houoy</groupId>
     <artifactId>houoy-common-vo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <parent>
         <groupId>com.houoy</groupId>
@@ -26,6 +26,16 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <!--<version>4.3.6.RELEASE</version>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <!--<version>8.5.11</version>-->
         </dependency>
     </dependencies>
 
