@@ -24,6 +24,9 @@ public class RequestResultVO implements Serializable {
 
     protected Object resultData;
 
+    //用于上传文件使用
+    protected String uploadId;
+
     protected Object def1;
 
     protected Object def2;
@@ -68,6 +71,7 @@ public class RequestResultVO implements Serializable {
         map.put("statusCode", statusCode);
         map.put("resultDataType", resultDataType);
         map.put("resultData", resultData);
+        map.put("uploadId", uploadId);
         map.put("def1", def1);
         map.put("def2", def2);
         map.put("def3", def3);
