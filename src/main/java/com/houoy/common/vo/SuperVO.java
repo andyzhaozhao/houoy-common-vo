@@ -1,5 +1,6 @@
 package com.houoy.common.vo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,34 +13,42 @@ import java.io.Serializable;
 @NoArgsConstructor
 public abstract class SuperVO implements Serializable{
 
+    @ApiModelProperty(hidden = true)
     private String memo;
-
+    @ApiModelProperty(hidden = true)
     private String def1;
+    @ApiModelProperty(hidden = true)
     private String def2;
+    @ApiModelProperty(hidden = true)
     private String def3;
+    @ApiModelProperty(hidden = true)
     private String def4;
+    @ApiModelProperty(hidden = true)
     private String def5;
-
+    @ApiModelProperty(hidden = true)
     private Boolean be_std;
+    @ApiModelProperty(hidden = true)
     private String ts;
+    @ApiModelProperty(hidden = true)
     private Integer dr;
 
     //冗余字段,分页
-    //从第多少条开始
+    @ApiModelProperty(value = "分页，从第多少条开始",hidden = false)
     private Integer start;
 
-    // 取多少条
+    @ApiModelProperty(value = "分页，长度（取多少行）",hidden = false)
     private Integer length;
 
-    //排序列名称
+    @ApiModelProperty(value = "分页，排序列名称）",hidden = false)
     private String orderColumnName;
 
-    //排序方法asc desc
+    @ApiModelProperty(value = "分页，排序方法asc desc）",hidden = false)
     private String orderDir;
 
+    @ApiModelProperty(hidden = true)
     public abstract String getPKField() ;
-
+    @ApiModelProperty(hidden = true)
     public abstract String getTableName();
-
+    @ApiModelProperty(hidden = true)
     public abstract Object getPKValue();
 }
