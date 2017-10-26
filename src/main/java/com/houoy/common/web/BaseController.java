@@ -3,8 +3,11 @@ package com.houoy.common.web;
 import com.houoy.common.service.BaseService;
 import com.houoy.common.utils.JqueryDataTablesUtil;
 import com.houoy.common.vo.JquryDataTablesVO;
+import com.houoy.common.vo.PageResultVO;
 import com.houoy.common.vo.RequestResultVO;
 import com.houoy.common.vo.SuperVO;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,5 +68,20 @@ public abstract class BaseController<V extends SuperVO, S extends BaseService> {
         Long count = service.retrieveAllCount();
         JquryDataTablesVO rtv = JqueryDataTablesUtil.madeJqueryDatatablesVO(count, result);
         return rtv;
+    }
+
+    public PageResultVO retrieveMobile(V vo, HttpServletRequest request) {
+        List<V> result = service.retrieveAllWithPage(vo);
+        Long count = service.retrieveAllCount();
+        PageResultVO pageResultVO = new PageResultVO();
+        pageResultVO.setSuccess(true);
+        pageResultVO.setMsg("查询成功");
+        pageResultVO.setResultData(result);
+        pageResultVO.setStart(vo.getStart());
+        pageResultVO.setLength(vo.getLength());
+        pageResultVO.setOrderColumnName(vo.getOrderColumnName());
+        pageResultVO.setOrderDir(vo.getOrderDir());
+        pageResultVO.setTotal(count + "");
+        return pageResultVO;
     }
 }
