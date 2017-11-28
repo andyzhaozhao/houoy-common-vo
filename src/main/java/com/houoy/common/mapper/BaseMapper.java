@@ -13,7 +13,7 @@ public interface BaseMapper<T extends SuperVO> {
 
     List<T> retrieveAll() throws RuntimeException;
 
-    Long retrieveAllCount() throws RuntimeException;
+    Long retrieveAllCount(T vo) throws RuntimeException;
 
     List<T> retrieveAllWithPage(T vo) throws RuntimeException;
 
