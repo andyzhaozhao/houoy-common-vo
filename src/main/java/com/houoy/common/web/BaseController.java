@@ -65,14 +65,14 @@ public abstract class BaseController<V extends SuperVO, S extends BaseService> {
     public JquryDataTablesVO<V> retrieve(V vo, HttpServletRequest request) {
         vo = (V) JqueryDataTablesUtil.filterParam(vo, request);
         List<V> result = service.retrieveAllWithPage(vo);
-        Long count = service.retrieveAllCount();
+        Long count = service.retrieveAllCount(vo);
         JquryDataTablesVO rtv = JqueryDataTablesUtil.madeJqueryDatatablesVO(count, result);
         return rtv;
     }
 
     public PageResultVO retrieveMobile(V vo, HttpServletRequest request) {
         List<V> result = service.retrieveAllWithPage(vo);
-        Long count = service.retrieveAllCount();
+        Long count = service.retrieveAllCount(vo);
         PageResultVO pageResultVO = new PageResultVO();
         pageResultVO.setSuccess(true);
         pageResultVO.setMsg("查询成功");

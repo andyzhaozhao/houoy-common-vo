@@ -25,8 +25,8 @@ public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> i
     }
 
     @Override
-    public Long retrieveAllCount() throws RuntimeException {
-        return mapper.retrieveAllCount();
+    public Long retrieveAllCount(SuperVO vo) throws RuntimeException {
+        return mapper.retrieveAllCount(vo);
     }
 
     @Override

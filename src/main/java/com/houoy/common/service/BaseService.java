@@ -15,7 +15,7 @@ public interface BaseService<T extends SuperVO> {
 
     List<T> retrieveByPK(String pk);
 
-    Long retrieveAllCount() throws RuntimeException;
+    Long retrieveAllCount(T vo) throws RuntimeException;
 
     List<T> retrieveAllWithPage(T vo) throws RuntimeException;
 
