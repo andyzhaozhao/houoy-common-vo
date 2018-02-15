@@ -62,7 +62,7 @@ public abstract class BaseController<V extends SuperVO, S extends BaseService> {
         return resultVO;
     }
 
-    public JquryDataTablesVO<V> retrieve(V vo, HttpServletRequest request) {
+    public JquryDataTablesVO<V> retrieveJquryDT(V vo, HttpServletRequest request) {
         vo = (V) JqueryDataTablesUtil.filterParam(vo, request);
         List<V> result = service.retrieveAllWithPage(vo);
         Long count = service.retrieveAllCount(vo);
@@ -70,7 +70,7 @@ public abstract class BaseController<V extends SuperVO, S extends BaseService> {
         return rtv;
     }
 
-    public PageResultVO retrieveMobile(V vo, HttpServletRequest request) {
+    public PageResultVO retrieve(V vo, HttpServletRequest request) {
         List<V> result = service.retrieveAllWithPage(vo);
         Long count = service.retrieveAllCount(vo);
         PageResultVO pageResultVO = new PageResultVO();
@@ -81,7 +81,7 @@ public abstract class BaseController<V extends SuperVO, S extends BaseService> {
         pageResultVO.setLength(vo.getLength());
         pageResultVO.setOrderColumnName(vo.getOrderColumnName());
         pageResultVO.setOrderDir(vo.getOrderDir());
-        pageResultVO.setTotal(count + "");
+        pageResultVO.setTotal(count);
         return pageResultVO;
     }
 }

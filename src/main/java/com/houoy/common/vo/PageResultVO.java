@@ -25,7 +25,7 @@ public class PageResultVO extends RequestResultVO {
     private String orderDir;
 
     @ApiModelProperty(value = "分页，总共有多少条数据）",hidden = false)
-    private String total;
+    private Long total;
 
     @Override
     public Map<String, Object> toMapValue() {
