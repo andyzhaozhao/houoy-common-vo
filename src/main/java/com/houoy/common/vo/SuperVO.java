@@ -34,16 +34,16 @@ public abstract class SuperVO implements Serializable{
 
     //冗余字段,分页
     @ApiModelProperty(value = "分页，从第多少条开始",hidden = false)
-    private Integer start;
+    private Integer start = 0;
 
     @ApiModelProperty(value = "分页，长度（取多少行）",hidden = false)
-    private Integer length;
+    private Integer length = 10;
 
     @ApiModelProperty(value = "分页，排序列名称）",hidden = false)
-    private String orderColumnName;
+    private String orderColumnName = "ts";
 
     @ApiModelProperty(value = "分页，排序方法asc desc）",hidden = false)
-    private String orderDir;
+    private String orderDir = "desc";
 
     @ApiModelProperty(hidden = true)
     public abstract String getPKField() ;
