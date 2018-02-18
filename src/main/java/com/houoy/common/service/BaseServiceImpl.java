@@ -15,12 +15,12 @@ public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> i
     protected abstract void setService(M _mapper);//为service赋值
 
     @Override
-    public List retrieveAll() {
+    public List<T> retrieveAll() {
         return mapper.retrieveAll();
     }
 
     @Override
-    public List retrieveByPK(String pk) {
+    public List<T> retrieveByPK(String pk) {
         return mapper.retrieveByPK(pk);
     }
 
@@ -30,7 +30,7 @@ public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> i
     }
 
     @Override
-    public List retrieveAllWithPage(T vo) throws RuntimeException {
+    public List<T> retrieveAllWithPage(T vo) throws RuntimeException {
         return mapper.retrieveAllWithPage(vo);
     }
 
@@ -55,7 +55,7 @@ public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> i
     }
 
     @Override
-    public List retrieveByParentPK(List pks) {
+    public List<T> retrieveByParentPK(List pks) {
         return mapper.retrieveByParentPK(pks);
     }
 }
