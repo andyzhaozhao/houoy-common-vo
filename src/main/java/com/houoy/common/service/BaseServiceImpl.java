@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by andyzhao on 2017/9/12.
  */
-public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> implements BaseService {
+public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> implements BaseService<T> {
 
     protected M mapper;
 
@@ -25,22 +25,22 @@ public abstract class BaseServiceImpl<M extends BaseMapper, T extends SuperVO> i
     }
 
     @Override
-    public Long retrieveAllCount(SuperVO vo) throws RuntimeException {
+    public Long retrieveAllCount(T vo) throws RuntimeException {
         return mapper.retrieveAllCount(vo);
     }
 
     @Override
-    public List retrieveAllWithPage(SuperVO vo) throws RuntimeException {
+    public List retrieveAllWithPage(T vo) throws RuntimeException {
         return mapper.retrieveAllWithPage(vo);
     }
 
     @Override
-    public Integer saveByVO(SuperVO vo) {
+    public Integer saveByVO(T vo) {
         return mapper.saveByVO(vo);
     }
 
     @Override
-    public Integer updateByVO(SuperVO vo) {
+    public Integer updateByVO(T vo) {
         return mapper.updateByVO(vo);
     }
 
