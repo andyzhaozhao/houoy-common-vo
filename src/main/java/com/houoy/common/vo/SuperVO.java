@@ -33,16 +33,16 @@ public abstract class SuperVO implements Serializable{
     private Integer dr;
 
     //冗余字段,分页
-    @ApiModelProperty(value = "分页，从第多少条开始",hidden = false)
+    @ApiModelProperty(value = "分页，从第多少条开始",hidden = false,example = "0")
     private Integer start = 0;
 
-    @ApiModelProperty(value = "分页，长度（取多少行）",hidden = false)
+    @ApiModelProperty(value = "分页，长度（取多少行）",hidden = false,example = "10")
     private Integer length = 10;
 
-    @ApiModelProperty(value = "分页，排序列名称）",hidden = false)
+    @ApiModelProperty(value = "分页，排序列名称）",hidden = false,example = "ts")
     private String orderColumnName = "ts";
 
-    @ApiModelProperty(value = "分页，排序方法asc desc）",hidden = false)
+    @ApiModelProperty(value = "分页，排序方法asc desc）",hidden = false,example = "desc")
     private String orderDir = "desc";
 
     @ApiModelProperty(hidden = true)
